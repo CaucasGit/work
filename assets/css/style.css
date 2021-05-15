@@ -76,7 +76,7 @@
   width: 100%;
   margin-top: 5%;
 }
-.form__submit button {
+.form__submit input {
   background: #2C2F47;
   border-radius: 28px;
   font-size: -webkit-calc(8px + 10 * (100vw / 1920));
@@ -86,7 +86,7 @@
   color: white;
   font-family: "Roboto", serif;
 }
-.form__submit button:hover {
+.form__submit input:hover {
   cursor: pointer;
 }
 
