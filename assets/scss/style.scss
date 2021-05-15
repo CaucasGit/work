@@ -103,7 +103,7 @@
     width: 100%;
     margin-top: 5%;
 
-    & button {
+    & input {
       background: #2C2F47;
       border-radius: 28px;
       @include adFonts(18,8,1920);
@@ -170,7 +170,7 @@
 
     width: 10%;
     height: 100%;
-    margin-right: 5%;
+    margin-right: .5%;
 
     & label {
       @include adFonts(24,14,1920);

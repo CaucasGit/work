@@ -130,7 +130,7 @@
 .checkbox__input {
   width: 10%;
   height: 100%;
-  margin-right: 5%;
+  margin-right: 0.5%;
 }
 .checkbox__input label {
   font-size: -webkit-calc(14px + 10 * (100vw / 1920));
