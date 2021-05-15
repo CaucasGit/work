@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@mixin adFonts($pcSize, $minSize, $screen) {
+
+  $addSize: $pcSize - $minSize;
+  $min: 100;
+
+  font-size: -webkit-calc(#{$minSize + px} + #{$addSize} * (100vw / #{$screen}));
+
+
+}
+
+
+
+._flex {
+  display: flex;
+  -ms-flex: border-box;
+}
+
+._center {
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../img/bg.jpg") no-repeat;
+  background-size: cover;
+  font-family: 'Roboto', serif;
+  overflow: auto;
+
+}
+
+.container {
+
+  flex-direction: column;
+
+  @media (max-width: 400px) {
+    width: 90%;
+  }
+
+  &__title {
+    margin-bottom: 5%;
+
+    & h1 {
+      text-shadow: 0px 4px 19px rgba(0, 0, 0, 0.97);
+      @include adFonts(55, 24, 1920);
+      color: white;
+    }
+  }
+
+}
+
+.form {
+
+  flex-direction: column;
+  background: #171929;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+  border-radius: 27px;
+  padding: 10%;
+  align-items: center;
+
+
+  &__header {
+
+    flex-direction: column;
+    margin-bottom: 10%;
+
+  }
+
+  &__title {
+    text-align: center;
+    color: white;
+    @include adFonts(18,8,1920);
+    padding: 0 15%;
+    margin-bottom: 5% ;
+  }
+
+  &__prefix {
+    color: #3F4363;
+    @include adFonts(15,8,1920)
+  }
+
+  &__content {
+    width: 100%;
+
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 5%;
+
+    & button {
+      background: #2C2F47;
+      border-radius: 28px;
+      @include adFonts(18,8,1920);
+      border: none;
+      outline: none;
+      padding: 2% 8%;
+      color: white;
+      font-family: 'Roboto', serif;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+.input {
+  width: 100%;
+  font-family: 'Roboto', serif;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: #797EA3;
+    @include adFonts(15,8,1920);
+    order: 1;
+  }
+
+
+  & input, textarea {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3F4363;
+    margin-bottom: 8%;
+    color: white;
+    @include adFonts(18,8,1920);
+    padding: 2% 0;
+    resize: none;
+    overflow: hidden;
+    order: 2;
+
+    &:focus ~ label {
+      border-color: white;
+
+      color: white !important;
+
+      & span {
+        color: #797EA3;
+      }
+    }
+  }
+
+}
+
+.checkbox {
+
+  align-items: center;
+  height: 10%;
+
+  &__input {
+
+    width: 10%;
+    height: 100%;
+    margin-right: 5%;
+
+    & label {
+      @include adFonts(24,14,1920);
+      height: 100%;
+      transform: scale(1.3);
+      z-index: 0;
+    }
+
+    & input {
+      position: absolute;
+      opacity: 0;
+      width: 1.5%;
+      height: 1.5%;
+      z-index: 1;
+      &:hover {
+        cursor: pointer;
+      }
+
+      &+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+
+      }
+      &+label::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid rgba(0,0,0,0);
+        border-radius: 0.25em;
+        margin-right: 0.5em;
+        background: rgba(121,126,163,.5);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+      }
+
+      &:checked+label::before {
+        content: '';
+        background-color: rgba(121,126,163,.5);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+      }
+
+
+    }
+
+  }
+
+  & p {
+    color: rgba(121,126,163,.5);
+    @include adFonts(15,8,1920);
+
+    & span {
+      border-bottom: 1px solid rgba(121,126,163,1);
+      color: rgba(121,126,163,1);
+    }
+  }
+
+}
